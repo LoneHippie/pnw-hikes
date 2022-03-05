@@ -1,5 +1,5 @@
 import { getAllHikes } from "$lib/database/controllers";
-import dbConnectPromise from "$lib/database";
+import { dbConnectPromise, isDbConnected } from "$lib/database";
 
 //Can use url params like ?hikeType=Loop
 
@@ -9,7 +9,11 @@ export async function get(body) {
     const params = String(body.url.searchParams).split('=');
     filter[params[0]] = params[1];
 
-    await dbConnectPromise();
+    const connection = await isDbConnected();
+
+    if (!connection) {
+        await dbConnectPromise();
+    }
 
     const allHikes = await getAllHikes(filter);
 

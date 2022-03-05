@@ -1,8 +1,10 @@
+// @ts-nocheck
 import HikeCard from './HikeCard.svelte';
-// @ts-ignore
 import Nav from './Nav.svelte';
+import CardContainer from './CardContainer.svelte';
 
 export {
     HikeCard,
-    Nav
+    Nav,
+    CardContainer
 }

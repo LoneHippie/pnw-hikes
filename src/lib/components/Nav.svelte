@@ -19,6 +19,8 @@
 
         background-color: $nia-blue-dark;
 
+        z-index: 1000;
+
         & > a {
             font-size: 2.5rem;
             margin-left: 1.5rem;

@@ -1,6 +1,6 @@
 import { useScraper } from '$lib/database/controllers';
 import { Hike } from '$lib/database/models';
-import dbConnectPromise from "$lib/database";
+import { dbConnectPromise, isDbConnected } from "$lib/database";
 
 
 async function createNewHike(args) {
@@ -21,7 +21,11 @@ export async function post({ request }) {
     // @ts-ignore
     const scraperResults = await useScraper(urls);
 
-    await dbConnectPromise()
+    const connection = await isDbConnected();
+
+    if (!connection) {
+        await dbConnectPromise()
+    }
 
     for (const entry of scraperResults) {
         await createNewHike(entry);

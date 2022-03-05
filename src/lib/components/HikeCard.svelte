@@ -25,6 +25,13 @@
         border: 2px solid magenta;
         height: 40rem;
 
+        border-radius: 10px;
+        overflow: none;
+
+        &:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
         &__display {
             position: relative;
             width: 100%;

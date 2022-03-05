@@ -1,4 +1,4 @@
-import { DB_URI, NODE_ENV } from '$lib/env';
+import { DB_URI } from '$lib/env';
 
 import mongoose from 'mongoose';
 
@@ -12,4 +12,13 @@ async function dbConnectPromise() {
     }).then(() => console.log('Connected to DB'))
 }
 
-export default dbConnectPromise;
+async function isDbConnected() {
+    const status = mongoose.connection.readyState;
+    
+    return status === 1;
+}
+
+export {
+    dbConnectPromise,
+    isDbConnected
+};
