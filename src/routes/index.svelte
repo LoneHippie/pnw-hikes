@@ -1,12 +1,9 @@
 <script>
     import { HikeCard } from '$lib/components';
-    import dbConnectPromise from "$lib/database";
-
-    dbConnectPromise();
 </script>
 
 <main>
-    <h1>Welcome to SvelteKit</h1>
+    <h1 class="woo">Welcome to SvelteKit</h1>
     <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
     <HikeCard 
         name={'Tunnel Falls'}
@@ -14,3 +11,11 @@
         hikeType={'loop'}
     />
 </main>
+
+<style lang="scss">
+    @import "../lib/styles/variables.scss";
+    .woo {
+        color: $nia-pink;
+    }
+
+</style>

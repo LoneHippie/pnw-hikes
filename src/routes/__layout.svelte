@@ -1,5 +1,8 @@
 <script>
-  import "../styles/index.css";
+  import "$lib/styles/app.scss";
+  import dbConnectPromise from "$lib/database";
+
+  dbConnectPromise();
 </script>
 
 <svelte:head>
