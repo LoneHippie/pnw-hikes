@@ -1,5 +1,7 @@
-import useWebScraper from "./scraper";
+import useScraper from "./useScraper";
+import { getAllHikes } from "./hikeController";
 
 export {
-    useWebScraper
+    useScraper,
+    getAllHikes
 }

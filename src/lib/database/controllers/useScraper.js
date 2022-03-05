@@ -71,7 +71,7 @@ const setData = async(url) => {
     return pageData;
 };
 
-const useWebScraper = async(urls) => {
+const useScraper = async(urls) => {
     const scrappedData = [];
 
     try {
@@ -91,4 +91,4 @@ const useWebScraper = async(urls) => {
     }
 };
 
-export default useWebScraper;
+export default useScraper;

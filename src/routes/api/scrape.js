@@ -1,5 +1,5 @@
-import { useWebScraper } from '$lib/database/controllers';
-import { Hike } from '$lib/database/models'
+import { useScraper } from '$lib/database/controllers';
+import { Hike } from '$lib/database/models';
 
 async function createNewHike(args) {
     const hike = new Hike(args);
@@ -17,7 +17,7 @@ export async function post({ request }) {
     }
 
     // @ts-ignore
-    const scraperResults = await useWebScraper(urls);
+    const scraperResults = await useScraper(urls);
 
     for (const entry of scraperResults) {
         await createNewHike(entry);
