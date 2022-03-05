@@ -1,20 +1,47 @@
 <script>
-    export let name;
-    export let coverImage;
-    export let hikeType;
+    export let hike
+
+    console.log({hike})
 </script>
 
 <div class="card">
-    <span>{name}</span>
-    <img 
-        src={coverImage}
-        alt="thingyy dkfslkdf sd"
-    />
-    <span>{hikeType}</span>
+    <div class="card__display">
+        <h3>{hike?.name}</h3>
+        <img 
+            src={hike?.coverImage}
+            alt={`Scenic shot of ${hike?.name}`}
+        />
+    </div>
+   <div class="card__info">
+        <span>{hike?.hikeType}</span>
+   </div>
 </div>
 
-<style>
+<style lang="scss">
+    @import "../styles/variables.scss";
     .card {
-        font-size: 100px;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid magenta;
+        height: 40rem;
+
+        &__display {
+            position: relative;
+            width: 100%;
+            height: 50%;
+
+            & > img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &__info {
+            height: 50%;
+            width: 100%;
+        }
     }
 </style>

@@ -5,7 +5,8 @@ import mongoose from 'mongoose';
 const DB = DB_URI;
 
 async function dbConnectPromise() {
-    await mongoose.connect(DB, {
+    // @ts-ignore
+    mongoose.connect(DB, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(() => console.log('Connected to DB'))

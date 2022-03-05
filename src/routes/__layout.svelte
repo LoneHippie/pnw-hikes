@@ -1,21 +1,14 @@
 <script>
-  import "$lib/styles/app.scss";
-  import dbConnectPromise from "$lib/database";
-
-  dbConnectPromise();
+  	import { Nav } from "$lib/components";
+  	import "$lib/styles/app.scss";
+  	
 </script>
 
 <svelte:head>
-  <meta name="robots" content="noindex" />
+  	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<nav>
-  <a href=".">HOME</a>
-  <a href="/about">ABOUT</a>
-</nav>
-
-<slot />
-
-<style>
-  
-</style>
+<main>
+  	<Nav />
+  	<slot/>
+</main>
